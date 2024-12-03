@@ -28,8 +28,8 @@ export function Contact() {
                 <div>
                   <h3 className="font-medium text-white mb-1">Email Us</h3>
                   <p className="text-gray-400">Our friendly team is here to help.</p>
-                  <a href="mailto:hello@newinternet.com" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mt-2">
-                    hello@newinternet.com
+                  <a href="mailto:hello@thenewinternet.org" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mt-2">
+                    hello@thenewinternet.org
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
@@ -100,7 +100,7 @@ export function Contact() {
                 <GlowingButton
                   className="w-full"
                   onClick={() => {
-                    const mailtoLink = `mailto:hello@newinternet.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20<${encodeURIComponent(email)}>`;
+                    const mailtoLink = `mailto:hello@thenewinternet.org?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20<${encodeURIComponent(email)}>`;
                     window.location.href = mailtoLink;
                   }}
                 >

@@ -6,6 +6,7 @@ const navigation = {
   product: [
     { name: 'Features', href: '#features' },
     { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Technical Details', href: '/technical' },
   ],
   resources: [
     { name: 'Github', href: 'https://github.com/theNewInternet/theNewInternet' },
