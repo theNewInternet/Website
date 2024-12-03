@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { GlowingButton } from './GlowingButton';
 
-export function Navbar({ openPopup }: { openPopup: () => void }) {
+export function Navbar({ openPopup }: { openPopup?: () => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,19 +26,24 @@ export function Navbar({ openPopup }: { openPopup: () => void }) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+            <Link to="/" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
               theNewInternet
-            </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="#features">Features</NavLink>
-            <NavLink href="#how-it-works">How It Works</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
-            <GlowingButton variant="secondary" className="ml-4" onClick={openPopup}>
-              Launch App
-            </GlowingButton>
+            <NavLink href="/#features">Features</NavLink>
+            <NavLink href="/#how-it-works">How It Works</NavLink>
+            <Link to="/technical" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">
+              Technical Details
+            </Link>
+            <NavLink href="/#contact">Contact</NavLink>
+            {openPopup && (
+              <GlowingButton variant="secondary" className="ml-4" onClick={openPopup}>
+                Launch App
+              </GlowingButton>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -60,14 +66,20 @@ export function Navbar({ openPopup }: { openPopup: () => void }) {
           }`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <MobileNavLink href="#features">Features</MobileNavLink>
-            <MobileNavLink href="#how-it-works">How It Works</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
-            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-            <MobileNavLink href="#contact">Contact</MobileNavLink>
-            <GlowingButton variant="secondary" className="w-full mt-4" onClick={openPopup}>
-              Launch App
-            </GlowingButton>
+            <MobileNavLink href="/#features">Features</MobileNavLink>
+            <MobileNavLink href="/#how-it-works">How It Works</MobileNavLink>
+            <Link
+              to="/technical"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              Technical Details
+            </Link>
+            <MobileNavLink href="/#contact">Contact</MobileNavLink>
+            {openPopup && (
+              <GlowingButton variant="secondary" className="w-full mt-4" onClick={openPopup}>
+                Launch App
+              </GlowingButton>
+            )}
           </div>
         </div>
       </div>

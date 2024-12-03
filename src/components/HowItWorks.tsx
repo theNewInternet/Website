@@ -4,9 +4,10 @@ interface StepProps {
   number: string;
   title: string;
   description: string;
+  image: string;  // Add image property
 }
 
-function Step({ number, title, description }: StepProps) {
+function Step({ number, title, description, image }: StepProps) {
   return (
     <div className="group relative">
       <div className="absolute -inset-px bg-gradient-to-r from-blue-500/50 to-purple-600/50 rounded-xl opacity-0 blur group-hover:opacity-100 transition-opacity" />
@@ -14,6 +15,7 @@ function Step({ number, title, description }: StepProps) {
         <div className="text-7xl font-bold bg-gradient-to-r from-white/5 to-white/10 text-transparent bg-clip-text mb-4">
           {number}
         </div>
+        <img src={image} alt={title} className="w-full h-48 object-contain rounded-lg mb-4" />
         <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-colors">
           {title}
         </h3>
@@ -41,16 +43,19 @@ export function HowItWorks() {
             number="01"
             title="Connect Wallet"
             description="Secure authentication with Web3Auth - no complex wallet setup needed"
+            image="/images/connect.jpg"
           />
           <Step
             number="02"
             title="Access Content"
             description="Browse content using blockchain addresses with complete privacy"
+            image="/images/browse.jpg"
           />
           <Step
             number="03"
             title="Share & Publish"
             description="Control access to your content with blockchain-based permissions"
+            image="/images/cli.jpg"
           />
         </div>
       </div>
