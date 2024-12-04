@@ -26,7 +26,12 @@ export function Hero({ openPopup }: { openPopup: () => void }) {
                 <span className="inline-block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 text-transparent bg-clip-text animate-fade-in animation-delay-100">New</span>
                 <span className="inline-block bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text animate-fade-in animation-delay-200">Internet</span>
               </h1>
+              <div className="mt-8 flex items-center gap-2 text-gray-400 animate-fade-in animation-delay-600">
+              <span>Powered by</span>
+              <a href='https://diode.io'><img src="/images/diode_logo.svg" alt="Diode.io" className="h-6" /></a>
             </div>
+            </div>
+            
 
             <p className="text-xl text-gray-400 max-w-2xl mb-12 animate-fade-in animation-delay-300">
               Experience the future of web browsing with our decentralized, 
@@ -56,8 +61,10 @@ export function Hero({ openPopup }: { openPopup: () => void }) {
               <Stat value="Web3" label="Authentication" />
               <Stat value="∞" label="Possibilities" />
             </div>
+            
+            
           </div>
-        <div className="relative group animate-fade-in animation-delay-300">
+        <div className="relative group animate-fade-in anima tion-delay-300">
             <div className="absolute -inset-px bg-gradient-to-r from-blue-500/50 to-purple-600/50 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity" />
               <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <div className="absolute inset-0 bg-[url('/images/screenshot.jpg')] bg-contain bg-repeat-space bg-center opacity-40" />
